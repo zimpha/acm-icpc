@@ -1,0 +1,49 @@
+据我考证这次的9道题目都是来自Topcoder SRM的
+Problem A～C 来自 SRM 407 div2
+Problem D～F 来自 SRM 408 div2
+Problem G～I 来自 SRM 409 div2
+先发个官方题解
+http://community.topcoder.com/tc?module=Static&d1=match_editorials&d2=srm407
+http://community.topcoder.com/tc?module=Static&d1=match_editorials&d2=srm408
+http://community.topcoder.com/tc?module=Static&d1=match_editorials&d2=srm409
+
+然后这是我的做法
+Problem A SpiralWalking
+没有什么编程复杂度，按照题目给的方法模拟就可以了。
+
+Problem B CorporationSalary
+按照题目给出的条件我们可以得到一个有向无环图，然后一边拓扑排序就解决了。
+注意这句话：For each test case, output 1 line(s): answer -- a long long integer.  最后结果需要用long long储存。
+
+Problem C CheapestRoute
+一道图论题，构造分层图，每个顶点<a,b>表示在位置a，之前使用过b次teleport。
+然后spfa一遍就解决了吧。
+注意这一句：you can walk left or right to an adjacent cell。不用teleport的时候两边都可以走。
+
+Problem D TournamentJudging
+这题我没有什么可以说的，ans=∑ floor(rawScores[i] / conversionFactor[i] + 0.5)
+
+Problem E OlympicCandles
+贪心吧，我们每次肯定是要将最高的蜡烛先用掉，不要问我为什么，我不会证明。
+每次对数组从大到小排序，第k天的话就将前k支蜡烛高度都减1，直到对于某一个k，前k支蜡烛中有一根高度为0。
+
+Problem F MarblesInABag
+简单的概率dp。
+设当前袋子中有r个红球，b个蓝球，dp[r][b]表示赢的概率，
+如果这一次你拿了红球，概率为r/(r+b)，那么下一次你的回合袋子中有r-1个红球，b-1个蓝球；如果这一次你拿了蓝球，概率为b/(r+b)，那么下一次你的回合袋子中有r个红球，b-2个蓝球。
+dp[r][b]=r/(r+b)*dp[r-1][b-1]+b/(r+b)*dp[r][b-2]
+接下来需要考虑空间限制，题目只给你32MB，经过粗略一算上面的dp[][]至少要100MB。我们通过输出几个特殊数据可以发现，当r*b大于某一个特定值的时候概率值小于1.0e-9，利用这一点我们可以控制dp[][]需要使用的空间。我设置这个LIMIT=2000000，并且将二维数组用一维数组来代替，这样空间限制就可以解决了。不过感觉上貌似也是可以用滚动数组来优化的。
+
+Problem G Stick
+大概初中生也会这道题目吧，就是求出x的二进制表示中1的个数。
+
+Problem H OrderedSuperString
+同样是贪心，我也不会证明。
+1.将第一个word作为所求串str，x=0
+2.读入下一个word，从str的位置x开始对word进行匹配，找到当前word对应的x'，然后合并str和word，并赋值x=x'
+3.重复2。
+最后所得串str的长度就是答案。
+
+Problem I TeleportsNetwork
+首先按照题目要求建好这一棵树，然后用floyd算法求出任意两点之间的距离，接下来枚举teleport的位置，并计算每种情况的inconvenience value，取最小值就可以了。
+这道题目思路挺简单的，就是代码长了一点，耐心的话可以1次AC。通过这道题目认识到zoj的编译器是ILP32的，下次果断直接用long long。
