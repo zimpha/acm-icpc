@@ -46,5 +46,5 @@ Problem 2: Island Travels
 
 Problem 3: Seating
 -----------
-赤裸裸的线段树，貌似有累似的题目在POJ上。
+赤裸裸的线段树，貌似有类似的题目在POJ上。
 
