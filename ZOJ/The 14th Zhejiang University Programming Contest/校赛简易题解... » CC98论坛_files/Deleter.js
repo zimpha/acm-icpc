@@ -1,0 +1,20 @@
+// JavaScript Document
+function DisplayDel(floorID) {
+	var DelName="98Deleter"
+	var DelImage="Images\/Deleter.gif"
+	if (floorID % 2 == 1){
+	var DelSex="Female"
+	var TableClass="tablebody1"
+	var DelUserFace="Images\/PoliceF.png"
+	}else{
+	var DelSex="Male"
+	var TableClass="tablebody2"
+	var DelMsg="testfdafd"
+	var DelUserFace="Images\/PoliceM.png"
+	}
+	
+	var DelMsg= isSimple ? "<div style=\"vertical-align:middle\">------------------------------------------------<br><span style=\"vertical-align:middle\;font-family: Verdana, Arial, Helvetica, sans-serif;font-weight:bold;\"><font size=\"2\" color=\"dimgray\">&nbsp;&nbsp;该回复已被 My cc98,My home<\/font><\/span><br>------------------------------------------------<\/div>" : "<div style=\"vertical-align:middle\">------------------------------------------------<br><img align=middle src="+DelImage+" border=0 title=\"该回复已被 My cc98,My home\"><span style=\"vertical-align:middle\;font-family: Verdana, Arial, Helvetica, sans-serif;font-weight:bold;\"><font size=\"2\" color=\"dimgray\">&nbsp;&nbsp;该回复已被 My cc98,My home<\/font><\/span><br>------------------------------------------------<\/div>";
+	
+    var PoliceHTML = isSimple ? "<TABLE cellPadding=5 cellSpacing=1 align=center class=tableborder1 style=\"table-layout:fixed;word-wrap:break-word;word-break:break-all;overflow:hidden;\"><tbody><tr><td class="+TableClass+"><blockquote class=\"contentdisp\"><table class="+TableClass+" border=0 width=100% style=\"table-layout:fixed;word-wrap:break-word;word-break:break-al\"><tr><td width=\"100%\" style=\"font-size:9pt;line-height:12pt\"><div class=\"usernamedisp\">第<font color=red>"+floorID+"</font>楼&nbsp;该贴由&nbsp;<font color=#990000><B>"+DelName+"</B></font>&nbsp;发表于&nbsp;1998/9/8&nbsp;9:09:08&nbsp;[<a href=\"#\">引用</a>]&nbsp;[<a href=\"#\">编辑</a>]</div><img src=face/face7.gif border=0 alt=\"发贴心情\">&nbsp;<br><span id=\"ubbcode1\" >"+DelMsg+"</span></td></tr></table></blockquote></td></tr></tbody></table>" : "<TABLE cellPadding=5 cellSpacing=1 align=center class=tableborder1 style=\"table-layout:fixed;word-wrap:break-word;word-break:break-all;overflow:hidden;\"><tbody><tr><td class="+TableClass+" valign=top width=175><table width=100% cellpadding=4 cellspacing=0><tr><td width=* valign=middle style=\"filter:glow(color=#9898BA,strength=2)\">&nbsp;<font color=#990000><B>"+DelName+"<\/B><\/font><\/td><td width=25 valign=middle><img src=pic\/"+DelSex+".gif><\/td><td width=16 valign=middle><img src=star\/z6.gif alt=处女座1998-09-08><\/td><\/tr><\/table>&nbsp;&nbsp;<img src="+DelUserFace+" width=120 height=120 border=0 ><br>&nbsp;&nbsp;<img src=pic\/evil.gif><br>&nbsp;&nbsp;等级：天外来客<BR>&nbsp;&nbsp;威望：9898<br>&nbsp;&nbsp;文章：9898<br>&nbsp;&nbsp;<font color=blue>职务：技术组成员<\/font><br><\/td><td class="+TableClass+" valign=top width=*><table width=100% ><tr><td width=* valign=\"middle\"><img align=\"absmiddle\" src=pic\/message.gif border=0 alt=\"给"+DelName+"发送一个短消息\">&nbsp;&nbsp;&nbsp;<img align=\"absmiddle\" src=pic\/profile.gif border=0 alt=\"查看"+DelName+"的个人资料\">&nbsp;&nbsp;&nbsp;<img align=\"absmiddle\" src=pic\/find.gif border=0>&nbsp;&nbsp;&nbsp;<img align=\"absmiddle\" src=pic\/reply.gif border=0 alt=\"引用回复这个帖子\">&nbsp;&nbsp;&nbsp;第<font color=#FF0000>" + floorID + "<\/font>楼&nbsp;<a href=#top><img align=absmiddle src=images\/top.gif border=0 alt=回到顶部><\/a><\/td><\/tr><tr><td bgcolor=#6595D6 height=1 colspan=2><\/td><\/tr><\/table><blockquote><table class="+TableClass+" border=0 width=90% style=\"table-layout:fixed;word-wrap:break-word;word-break:break-all\"><tr><td width=\"100%\" style=\"font-size:9pt;line-height:12pt\"><img src=face\/face7.gif border=0 alt=\"发贴心情\">&nbsp;<b><\/b><br \/>" + DelMsg + "<\/td><\/blockquote><\/tr><\/table><\/td><\/tr><tr><td class="+TableClass+" valign=middle align=center width=175><img align=absmiddle border=0 width=13 height=15 src=pic\/ip.gif>&nbsp;1998-09-08 09:08:08<\/td><td class="+TableClass+" valign=middle width=*><\/td><\/tr><\/tbody><\/table>";	
+        document.write(PoliceHTML);
+};
